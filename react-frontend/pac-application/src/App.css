@@ -1,0 +1,21 @@
+.w-75 {
+  width: 75% !important;
+}
+
+.w-67 {
+  width: 67% !important;
+}
+
+.cursor-on-hover:hover {
+  cursor: pointer;
+}
+
+.profile-img {
+  width: calc(7rem * 0.625);
+  height: calc(7rem * 0.625);
+  border-radius: 100%;
+}
+
+.icon {
+  font-size: calc(3.6rem * 0.625);
+}
