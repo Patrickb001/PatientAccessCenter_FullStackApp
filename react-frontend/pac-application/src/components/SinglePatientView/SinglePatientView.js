@@ -1,26 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { PatientNotes } from "../../PatientNotes/PatientNotes";
 import { MedicationCard } from "../MedicationCard/MedicationCard";
 import { PatientInfoCard } from "../PatientInfoCard/PatientInfoCard";
 import { PatientLabResults } from "../PatientLabResults/PatientLabResults";
 import { Vitals } from "../Vitals/Vitals";
+import "../CustomModal/CustomModal.css";
+import { ChartModal } from "../CustomModal/ChartModal/ChartModal";
+import ModalService from "../CustomModal/service/CustomModalService";
+import { DischargeModal } from "../CustomModal/DischargeModal/DischargeModal";
 
 export const SinglePatientView = ({ patient, setPatient }) => {
-  console.log(patient);
-
   return (
     <div>
       <nav className="w-67 mx-auto mt-2 fs-4 d-flex justify-content-between">
         <span>Patient Overview</span>
-        <div className="">
+        <div className="d-inline-block">
           <span
             onClick={() => setPatient(null)}
             className="me-2 fs-5 cursor-on-hover"
           >
             Home{" "}
           </span>
-          <span className="me-3 fs-5 cursor-on-hover">Chart</span>
-          <span className="me-3 fs-5 cursor-on-hover">Discharge</span>
+          <span
+            onClick={() => ModalService.openChartModal()}
+            id="open"
+            className="me-3 fs-5 cursor-on-hover"
+          >
+            Chart
+          </span>
+          <span
+            onClick={() => ModalService.openDischargeModal()}
+            className="me-3 fs-5 cursor-on-hover"
+          >
+            Discharge
+          </span>
         </div>
       </nav>
       <div className="container mx-auto w-75 mt-4">
@@ -40,6 +53,8 @@ export const SinglePatientView = ({ patient, setPatient }) => {
           <PatientLabResults patient={patient} />
         </div>
       </div>
+      <ChartModal setPatient={setPatient} patient={patient} />
+      <DischargeModal setPatient={setPatient} patient={patient} />
     </div>
   );
 };

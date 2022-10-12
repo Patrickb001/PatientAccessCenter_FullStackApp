@@ -18,3 +18,13 @@ export function getDate(dateString) {
 
   return [day, month, year];
 }
+
+export async function updatePatient(patientData) {
+  return await axios.put(`${PATIENT_REST_API_URL}`, patientData);
+}
+
+export async function removePatient(patientData, id) {
+  return await axios.delete(`${PATIENT_REST_API_URL}?id=${id}`, {
+    data: patientData,
+  });
+}

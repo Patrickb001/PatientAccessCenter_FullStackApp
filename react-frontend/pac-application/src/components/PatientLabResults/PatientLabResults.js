@@ -4,7 +4,6 @@ import { getDate } from "../../services/PatientService";
 export const PatientLabResults = ({ patient }) => {
   const patientVisit = new Date();
   const [day, month, year] = getDate(patientVisit);
-  console.log(day, month, year);
 
   return (
     <div className="col border border-2 mt-4">

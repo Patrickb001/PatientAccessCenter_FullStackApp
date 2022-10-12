@@ -21,25 +21,25 @@ public class Patient {
     @Id
     private String id;
 
-    @NotEmpty
+    @NotNull
     private String profileImg;
 
-    @NotEmpty
+    @NotNull
     private String name;
 
 
-    @NotEmpty
+    @NotNull
     private String DOB;
 
-    @NotEmpty
+    @NotNull
     private String weight;
     
     private Gender gender;
 
-    @NotEmpty
+    @NotNull
     private String diagnosis;
 
-    @NotEmpty
+    @NotNull
     private String address;
 
     @NotNull
@@ -51,7 +51,7 @@ public class Patient {
     @NotNull
     private String workNumber;
 
-    @NotEmpty
+    @NotNull
     private String height;
 
     private LocalDateTime createdAt;
@@ -64,7 +64,7 @@ public class Patient {
     private List<String> medications;
 
     @NotNull
-    private List<String> vitalSigns;
+    private String[] vitalSigns;
 
     @NotNull List<String> labOrders;
 
@@ -74,7 +74,7 @@ public class Patient {
     public Patient(String profileImg, String name, String DOB, String weight, String height,
                    Gender gender, String diagnosis, String address, String email,
                    String homeNumber, String mobileNumber, String workNumber,
-                   List<String> comorbidities, List<String> medications, List<String> vitalSigns, List<String> labOrders) {
+                   List<String> comorbidities, List<String> medications, String[] vitalSigns, List<String> labOrders) {
         this.profileImg = profileImg;
         this.name = name;
         this.DOB = DOB;
