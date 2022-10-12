@@ -66,13 +66,15 @@ public class Patient {
     @NotNull
     private List<String> vitalSigns;
 
+    @NotNull List<String> labOrders;
+
     public Patient() {
     }
 
     public Patient(String profileImg, String name, String DOB, String weight, String height,
                    Gender gender, String diagnosis, String address, String email,
                    String homeNumber, String mobileNumber, String workNumber,
-                   List<String> comorbidities, List<String> medications, List<String> vitalSigns) {
+                   List<String> comorbidities, List<String> medications, List<String> vitalSigns, List<String> labOrders) {
         this.profileImg = profileImg;
         this.name = name;
         this.DOB = DOB;
@@ -89,6 +91,7 @@ public class Patient {
         this.createdAt = LocalDateTime.now();
         this.medications = medications;
         this.vitalSigns = vitalSigns;
+        this.labOrders = labOrders;
     }
 
     public String getId(){

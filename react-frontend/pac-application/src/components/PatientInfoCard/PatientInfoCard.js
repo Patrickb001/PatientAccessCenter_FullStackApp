@@ -20,27 +20,27 @@ export const PatientInfoCard = ({ patient }) => {
           </div>
           <div className="row">
             <div className="d-flex flex-wrap ps-3">
-              <div className="me-5 mb-4">
+              <div className="me-5 mb-2">
                 <h2 className="fs-6">DOB</h2>
                 <h2 className="fs-6">{`${month}/${day}/${year}`}</h2>
               </div>
-              <div className="mb-4">
+              <div className=" me-5">
                 <h2 className="fs-6">Age</h2>
                 <h2 className="fs-6">{2022 - year}</h2>
               </div>
               <div className="me-5">
-                <h2 className="fs-6 me-4">Weight</h2>
+                <h2 className="fs-6 me-3">Weight</h2>
                 <h2 className="fs-6">{patient.weight}</h2>
               </div>
               <div>
                 <h2 className="fs-6">Height</h2>
                 <h2 className="fs-6">{patient.height}</h2>
               </div>
-              <div className="my-3">
-                <div>
-                  <button className="btn btn-primary">Send Message</button>
-                </div>
-              </div>
+            </div>
+          </div>
+          <div className="row mt-3">
+            <div>
+              <button className="btn btn-primary btn-sm">Send Message</button>
             </div>
           </div>
         </div>

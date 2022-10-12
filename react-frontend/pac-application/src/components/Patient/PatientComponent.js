@@ -28,7 +28,7 @@ export const PatientComponent = () => {
       {!patient ? (
         <AllPatients patients={patients} getSinglePatient={getSinglePatient} />
       ) : (
-        <SinglePatientView patient={patient} />
+        <SinglePatientView setPatient={setPatient} patient={patient} />
       )}
     </div>
   );

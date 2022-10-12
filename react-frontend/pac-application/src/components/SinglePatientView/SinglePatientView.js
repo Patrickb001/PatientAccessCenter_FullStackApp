@@ -1,14 +1,28 @@
 import React from "react";
+import { PatientNotes } from "../../PatientNotes/PatientNotes";
 import { MedicationCard } from "../MedicationCard/MedicationCard";
 import { PatientInfoCard } from "../PatientInfoCard/PatientInfoCard";
+import { PatientLabResults } from "../PatientLabResults/PatientLabResults";
 import { Vitals } from "../Vitals/Vitals";
 
-export const SinglePatientView = ({ patient }) => {
+export const SinglePatientView = ({ patient, setPatient }) => {
   console.log(patient);
 
   return (
     <div>
-      <nav className="w-67 mx-auto my-1">Patient Overview</nav>
+      <nav className="w-67 mx-auto mt-2 fs-4 d-flex justify-content-between">
+        <span>Patient Overview</span>
+        <div className="">
+          <span
+            onClick={() => setPatient(null)}
+            className="me-2 fs-5 cursor-on-hover"
+          >
+            Home{" "}
+          </span>
+          <span className="me-3 fs-5 cursor-on-hover">Chart</span>
+          <span className="me-3 fs-5 cursor-on-hover">Discharge</span>
+        </div>
+      </nav>
       <div className="container mx-auto w-75 mt-4">
         <div className="row ms-5 ">
           <PatientInfoCard patient={patient} />
@@ -21,13 +35,9 @@ export const SinglePatientView = ({ patient }) => {
             </div>
           </div>
         </div>
-        <div className="row ms-5">
-          <div className="col">
-            <div>{patient.gender}</div>
-          </div>
-          <div className="col">
-            <div>{patient.gender}</div>
-          </div>
+        <div className="row ms-5 d-flex justify-content-between mb-5">
+          <PatientNotes />
+          <PatientLabResults patient={patient} />
         </div>
       </div>
     </div>
