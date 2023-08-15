@@ -18,9 +18,11 @@ function closeDischargeModal(e) {
   modalContainer?.classList?.remove("show");
 }
 
-export default {
+const ModalService = {
   openChartModal,
   closeChartModal,
   openDischargeModal,
   closeDischargeModal,
 };
+
+export default ModalService;

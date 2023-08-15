@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { getAllPatients, getPatientById } from "../../services/PatientService";
-import { AllPatients } from "../AllPatientsView/AllPatients";
-import { SinglePatientView } from "../SinglePatientView/SinglePatientView";
+import { AllPatients, SinglePatientView } from "../index";
 
 export const PatientComponent = () => {
   const [patients, setPatients] = useState([]);
   const [patient, setPatient] = useState(null);
 
-  useEffect(
-    () => async () => {
-      await getAllPatients().then((res) => {
-        setPatients(res.data);
-      });
-    },
-    []
-  );
+  useEffect(() => {
+    handleAllPatientData();
+  }, []);
+
+  async function handleAllPatientData() {
+    const patients = await getAllPatients();
+    setPatients(patients.data);
+  }
 
   async function getSinglePatient(id) {
     await getPatientById(id).then((res) => {

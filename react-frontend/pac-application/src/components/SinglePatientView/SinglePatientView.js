@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import {
+  MedicationCard,
+  PatientInfoCard,
+  PatientLabResults,
+  Vitals,
+  ChartModal,
+  DischargeModal,
+} from "../index";
 import { PatientNotes } from "../../PatientNotes/PatientNotes";
-import { MedicationCard } from "../MedicationCard/MedicationCard";
-import { PatientInfoCard } from "../PatientInfoCard/PatientInfoCard";
-import { PatientLabResults } from "../PatientLabResults/PatientLabResults";
-import { Vitals } from "../Vitals/Vitals";
 import "../CustomModal/CustomModal.css";
-import { ChartModal } from "../CustomModal/ChartModal/ChartModal";
 import ModalService from "../CustomModal/service/CustomModalService";
-import { DischargeModal } from "../CustomModal/DischargeModal/DischargeModal";
 
 export const SinglePatientView = ({ patient, setPatient }) => {
   return (
